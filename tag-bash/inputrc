@@ -1,0 +1,6 @@
+# Settings
+set completion-ignore-case on
+
+# Bindings
+"\ej": history-search-forward
+"\ek": history-search-backward

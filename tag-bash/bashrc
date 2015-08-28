@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# The directory to look for our additional scripts
+BASH_DIR="$HOME"
+
+# Aliases & Functions
+source $BASH_DIR/.bash_aliases
+source $BASH_DIR/.bash_funcs
+source $BASH_DIR/bin/z/z.sh
+source /usr/share/nvm/init-nvm.sh
+
+# Path
+# ----
+# A hacky way to add all the dirs in ~/bin to path.
+# Really clutters up path, so should find some way 
+# to make it only add dirs containing executables
+PATH="$PATH:$(find $HOME/bin -type d | tr '\n' ':')"
+PATH="$PATH:/usr/local/bin"
+
+# Node Modules
+PATH="$PATH:$HOME/.node_modules/bin"
+
+# Ruby Gems
+PATH="$PATH:`ruby -e 'print Gem.user_dir'`/bin"
+
+export PATH
+
+# ssh key manager
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+
+# node repl settings
+export NODE_REPL_HISTORY_FILE="$BASH_DIR/.nodehist"
+
+# Default Programs
+export EDITOR="vim"
+export BROWSER="firefox"
+
+# improve font rendering
+export GDK_USE_XFT=1
+export QT_XFT=1
+
+# Shell options
+shopt -s expand_aliases
+shopt -s cdspell
+shopt -s dirspell
+shopt -s dotglob
+shopt -s globstar
+shopt -s autocd
+shopt -s cmdhist
+export HISTCONTROL=ignoredups:erasedups
+
+# Prompt
+T_NORMAL="\[\e[0;33m\]"
+T_SU="\[\e[1;31m\]"
+T_RESET="\[\e[0m\]"
+
+if [[ $EUID -eq 0 ]]; then
+  PS1="\n╭─┤ ${T_SU}\u@\h${T_RESET} │ \W"
+  PS1="${PS1}\n╰┄${T_SU}# ${T_RESET}"
+else
+  PS1="\n╭─┤ ${T_NORMAL}\u@\h${T_RESET} │ \W"
+  PS1="${PS1}\n╰┄${T_NORMAL}\$ ${T_RESET}"
+fi

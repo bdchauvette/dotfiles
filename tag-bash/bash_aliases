@@ -1,0 +1,25 @@
+# Defaults for some programs
+alias cp='cp -v'
+alias mv='mv -v'
+alias rm='rm -v'
+
+alias grep="grep --color"
+alias egrep="grep -E --color"
+alias ls='ls -F --color=auto'
+
+# Abbreviations for common programs & commands
+alias pd='pushd'
+alias n6='6to5-node'
+alias ffd='firefox-developer'
+
+# Some sudo abbreviations
+alias svim='sudo vim'
+alias spm='sudo pacman'
+
+# Aptitude
+#alias ai='sudo apt-get install'
+#alias aup='sudo apt-get update'
+#alias aug='sudo apt-get upgrade'
+#alias aupg='sudo apt-get update && sudo apt-get upgrade'
+#alias arm='sudo apt-get remove'
+#alias ap='sudo apt-get purge'

@@ -1,0 +1,4 @@
+TAGS="awesome bash termite tmux vim webdev x"
+EXCLUDES="README"
+DOTFILES_DIRS="~/Code/dotfiles"
+SYMLINK_DIRS="vim awesome"

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# install vim-plug automatically
+if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
+  curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+vim -u $HOME/.vimrc +PlugInstall +PlugClean! +qa
+
+# install tmux package manager (tpm) automatically
+if [ ! -e $HOME/.vim/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+fi
+$HOME/.tmux/plugins/tpm/bin/install_plugins
+
+# install npm packages
+npm install --global \
+  csscomb \
+  eslint \
+  babel-eslint \
+  eslint-config-airbnb \
+  eslint-plugin-react

@@ -1,0 +1,27 @@
+"
+" File:    .vimrc
+" Author:  Ben Chauvette <bdchauvette@gmail.com>
+" Created: 2012-03-30
+" Updated: 2015-08-27
+"
+" ----
+"
+" A minimalistic `vimrc` that loads other files from `~/.vim/vimrc/`
+"
+" ----
+
+set nocompatible
+
+let mapleader = " "
+
+source $HOME/.vim/vimrc/plugins.vim
+source $HOME/.vim/vimrc/settings.vim
+source $HOME/.vim/vimrc/functions.vim
+source $HOME/.vim/vimrc/mappings.vim
+source $HOME/.vim/vimrc/filetypes.vim
+
+" =============================================================================
+"                                                          .___.
+"                Happy vimming!                            {o،o}
+"                                                          (__(\
+" =========================================================="="================

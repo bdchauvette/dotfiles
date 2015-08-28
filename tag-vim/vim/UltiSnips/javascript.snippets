@@ -1,0 +1,34 @@
+snippet sec
+/*****************************************************************************/
+endsnippet
+
+snippet import
+import ${1:name} from '${2:package}';
+$0
+endsnippet
+
+snippet react
+import React from 'react';
+
+const ${1:Componenent} = React.createClass({
+	render() {
+		return (
+			$0
+		);
+	},
+});
+
+export default $1;
+endsnippet
+
+snippet model
+import Backbone from 'backbone';
+
+const ${1:Model} = Backbone.Model.extend({
+  initialize() {
+	  $0
+	},
+});
+
+export default $1;
+endsnippet

@@ -43,6 +43,7 @@ export GDK_USE_XFT=1
 export QT_XFT=1
 
 # Shell options
+shopt -s checkwinsize
 shopt -s expand_aliases
 shopt -s cdspell
 shopt -s dirspell
@@ -53,9 +54,9 @@ shopt -s cmdhist
 export HISTCONTROL=ignoredups:erasedups
 
 # Prompt
-T_NORMAL="\[\e[0;33m\]"
-T_SU="\[\e[1;31m\]"
-T_RESET="\[\e[0m\]"
+T_NORMAL="\[$(tput setaf 3)\]"  # yellow when normal user
+T_SU="\[$(tput setaf 1)\]"      # red when root
+T_RESET="\[$(tput setaf 7)\]"   # white for default text
 
 if [[ $EUID -eq 0 ]]; then
   PS1="\n╭─┤ ${T_SU}\u@\h${T_RESET} │ \W"

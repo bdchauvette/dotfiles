@@ -1,4 +1,4 @@
-TAGS="awesome bash termite tmux vim webdev x"
-EXCLUDES="README"
+TAGS="bash i3 i3status ranger termite tmux vim x"
+EXCLUDES="README.md tag-rofi"
 DOTFILES_DIRS="~/Code/dotfiles"
-SYMLINK_DIRS="vim awesome"
+SYMLINK_DIRS="i3 i3status ranger termite vim"

@@ -81,8 +81,7 @@ set lazyredraw               " don't redraw while executing macros
 " 05. Syntax, highlighting and spelling
 " =============================================================================
 set background=dark          " Dark background color
-let base16colorspace=256     " Allow Base16 color schemes to use 256 colors
-colo base16-summerfruit      " Use the base16-brewer color scheme
+colo gruvbox                 " Use the gruvbox colorscheme
 
 set cursorline               " Highlight the current cursor line
 set nocursorcolumn           " Highlight the current cursor column
@@ -230,3 +229,5 @@ set encoding=utf-8           " Character encoding used by vim
 " 26. Various
 " =============================================================================
 set gdefault                 " Make 'g' flag default for search & replace
+
+let g:netrw_liststyle=3      " Use tree-style in netrw

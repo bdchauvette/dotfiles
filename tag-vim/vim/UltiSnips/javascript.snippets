@@ -1,34 +1,110 @@
-snippet sec
-/*****************************************************************************/
+snippet style
+// import class names that are needed for this component
+import style from '../style/${1:path}';
+$0
 endsnippet
 
-snippet import
+###############################################################################
+
+snippet handle
+handle${1:Action} = (e) => {
+  $0
+}
+endsnippet
+
+###############################################################################
+
+snippet test
+test(\`\${SUITE} / ${1:suite name}\`, async (t) => {
+	try {
+		$0
+	} catch (err) {
+		t.error(err);
+	}
+
+	t.end();
+});
+endsnippet
+###############################################################################
+
+snippet im
 import ${1:name} from '${2:package}';
 $0
 endsnippet
 
-snippet react
-import React from 'react';
+###############################################################################
 
-const ${1:Componenent} = React.createClass({
+snippet exc
+export const ${1:NAME} = ${2:value};
+endsnippet
+
+###############################################################################
+
+snippet exd
+export default ${1:name};
+endsnippet
+
+###############################################################################
+
+snippet container
+import React, { Component, PropTypes } from 'react';
+import { branch } from 'baobab-react/higher-order';
+
+${4:const propTypes = {
+	${5}
+};}
+
+${7:const defaultProps = {
+	${8}
+};}
+
+/**
+ * ${1: Description}
+ */
+class ${3:${2:Component}Container} extends Component {
 	render() {
 		return (
 			$0
 		);
+	}
+}
+${6:
+$3.propTypes = propTypes;}${9:
+$3.defaultProps = defaultProps;
+}
+export default branch($3, {
+	cursors: {
 	},
-});
-
-export default $1;
+	actions: {
+	},
+};
 endsnippet
 
-snippet model
-import Backbone from 'backbone';
+###############################################################################
 
-const ${1:Model} = Backbone.Model.extend({
-  initialize() {
-	  $0
-	},
-});
-
-export default $1;
+snippet component
+import React, { PropTypes } from 'react';
+${3:
+const propTypes = {
+	${4}
+};}${6:
+const defaultProps = {
+	${7}
+};
+}
+/**
+ * ${1: Description}
+ */
+function ${2:Component}(props: Object) {
+	return (
+		${8:<div>
+			$0
+		</div>}
+	);
+}
+${5:
+$2.propTypes = propTypes;}${8:
+$2.defaultProps = defaultProps;
+}
+export default $2;
 endsnippet

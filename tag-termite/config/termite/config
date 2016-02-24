@@ -2,36 +2,44 @@
 font = Fira Mono 10
 
 [colors]
-# Base16 Summerfruit
-# Scheme: Christopher Corley (http://cscorley.github.io/)
+# Gruvbox
+# https://github.com/morhetz/gruvbox-contrib/blob/master/termite/gruvbox-dark
 
-foreground      = #D0D0D0
-foreground_bold = #D0D0D0
-cursor          = #D0D0D0
-background      = #151515
+# hard contrast: background = #1d2021
+background = #282828
 
-# 16 color space
-color0  = #151515
-color1  = #FF0086
-color2  = #00C918
-color3  = #ABA800
-color4  = #3777E6
-color5  = #AD00A1
-color6  = #1faaaa
-color7  = #D0D0D0
-color8  = #505050
-color9  = #FF0086
-color10 = #00C918
-color11 = #ABA800
-color12 = #3777E6
-color13 = #AD00A1
-color14 = #1faaaa
-color15 = #FFFFFF
+# soft contrast: background = #32302f
+foreground = #ebdbb2
+foreground_bold = #ebdbb2
 
-# 256 color space
-color16 = #FD8900
-color17 = #cc6633
-color18 = #202020
-color19 = #303030
-color20 = #B0B0B0
-color21 = #E0E0E0
+# dark0 + gray
+color0 = #282828
+color8 = #928374
+
+# neurtral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
+
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
+
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
+
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
+
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
+
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
+
+# light4 + light1
+color7 = #a89984
+color15 = #ebdbb2

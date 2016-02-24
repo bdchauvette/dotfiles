@@ -6,16 +6,21 @@
 # The directory to look for our additional scripts
 BASH_DIR="$HOME"
 
+# Prevent ranger from loading its config twice
+
+
 # Aliases & Functions
 source $BASH_DIR/.bash_aliases
 source $BASH_DIR/.bash_funcs
 source $BASH_DIR/bin/z/z.sh
 source /usr/share/nvm/init-nvm.sh
+source /usr/share/git/completion/git-completion.bash
+source /usr/share/git/completion/git-prompt.sh
 
 # Path
 # ----
 # A hacky way to add all the dirs in ~/bin to path.
-# Really clutters up path, so should find some way 
+# Really clutters up path, so should find some way
 # to make it only add dirs containing executables
 PATH="$PATH:$(find $HOME/bin -type d | tr '\n' ':')"
 PATH="$PATH:/usr/local/bin"
@@ -29,7 +34,7 @@ PATH="$PATH:`ruby -e 'print Gem.user_dir'`/bin"
 export PATH
 
 # ssh key manager
-eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa id_ecdsa)
 
 # node repl settings
 export NODE_REPL_HISTORY_FILE="$BASH_DIR/.nodehist"
@@ -57,11 +62,14 @@ export HISTCONTROL=ignoredups:erasedups
 T_NORMAL="\[$(tput setaf 3)\]"  # yellow when normal user
 T_SU="\[$(tput setaf 1)\]"      # red when root
 T_RESET="\[$(tput setaf 7)\]"   # white for default text
+T_GIT="\[$(tput setaf 5)\]"   # white for default text
+
+GIT="${T_GIT}\$(__git_ps1)${T_RESET}"
 
 if [[ $EUID -eq 0 ]]; then
-  PS1="\n╭─┤ ${T_SU}\u@\h${T_RESET} │ \W"
+  PS1="${T_RESET}\n╭─┤ ${T_SU}\u@\h${T_RESET} │ \W ${GIT}"
   PS1="${PS1}\n╰┄${T_SU}# ${T_RESET}"
 else
-  PS1="\n╭─┤ ${T_NORMAL}\u@\h${T_RESET} │ \W"
+  PS1="${T_RESET}\n╭─┤ ${T_NORMAL}\u@\h${T_RESET} │ \W ${GIT}"
   PS1="${PS1}\n╰┄${T_NORMAL}\$ ${T_RESET}"
 fi

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Concatenate various files to create a single .Xresources one.
+script_dir=$(dirname "$(readlink -f "$0")")
+base_dir=$(cd "${script_dir}/../"; pwd)
+files=("${base_dir}/tag-rofi/config")
+Xresources="${base_dir}/tag-x/Xresources"
+
+rm -v $Xresources
+touch $Xresources
+for file in $files; do
+  cat $file >> $Xresources && echo "added file ${file} to .Xresources"
+done
+echo "done creating $Xresources"

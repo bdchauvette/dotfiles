@@ -1,8 +1,9 @@
-#/usr/bin/env sh
+#/usr/bin/env bash
 
 setxkbmap -option 'ctrl:nocaps'
 
-termite &
-firefox-developer &
-thunderbird &
-nm-applet &
+termite -t scratchpad &
+firefox-aurora &
+redshift-gtk &
+
+rofi &

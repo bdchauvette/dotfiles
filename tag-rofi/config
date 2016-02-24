@@ -1,0 +1,189 @@
+! Triggers
+rofi.key-window:                     SuperL+Tab
+rofi.key-run:                        SuperL+space
+rofi.key-ssh:                        SuperL+s
+
+! Enalbe & Combine the following modes
+rofi.modi:                           window,run,ssh
+rofi.combi-modi:                     window,run
+
+! Programs & Commands
+! =============================================================================
+rofi.terminal:                       termite
+rofi.ssh-client:                     ssh
+rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
+rofi.run-command:                    {cmd}
+
+! Run command to execute that runs in shell
+rofi.run-shell-command:              {terminal} -e {cmd}
+
+! Command to get extra run targets
+rofi.run-list-command:
+
+! Appearance
+! =============================================================================
+rofi.lines:                          7
+rofi.columns:                        1
+
+rofi.opacity:                        50
+rofi.font:                           fira mono 14
+
+! Normal Windows - Blue
+rofi.fg:                             #828374
+rofi.bg:                             #282828
+rofi.hlfg:                           #ebdbb2
+rofi.hlbg:                           #458588
+
+! Active Window - Yellow
+rofi.fg-active:                      #282828
+rofi.bg-active:                      #d79921
+rofi.hlfg-active:                    #444444
+rofi.hlbg-active:                    #fabd2f
+
+! Urgent Windows - Red
+rofi.fg-urgent:                      #a89984
+rofi.bg-urgent:                      #cc241d
+rofi.hlfg-urgent:                    #282828
+rofi.hlbg-urgent:                    #d3869b
+
+! Rows per state                     bg     ,fg     ,alt bg ,hl bg  ,hl fg
+rofi.color-enabled:                  false
+rofi.color-normal:                   #fdf6e3,#002b36,#eee8d5,#586e75,#eee8d5
+rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
+rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
+rofi.color-window:                   #fdf6e3,#002b36
+
+! Background color for alternating row
+!rofi.bgalt:                          #2b2b2b
+
+! Border color & width
+rofi.bc:                             #d79921
+rofi.bw:                             2
+
+rofi.width:                          50
+rofi.padding:                        10
+rofi.yoffset:                        0
+rofi.xoffset:                        0
+rofi.fixed-num-lines:                false
+
+! Row height (in chars)
+rofi.eh:                             1
+
+rofi.hide-scrollbar:                 false
+rofi.markup-rows:                    false
+rofi.fullscreen:                     false
+rofi.fake-transparency:              true
+rofi.dpi:                            -1
+
+! Location on screen
+rofi.location:                       0
+
+! Margin between rows
+rofi.line-margin:                    2
+
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
+
+
+! Behavior
+! =============================================================================
+rofi.disable-history:                false
+rofi.levenshtein-sort:               true
+rofi.case-sensitive:                 false
+
+! Enable sidebar-mode
+rofi.sidebar-mode:                   true
+
+! Set lazy filter limit
+rofi.lazy-filter-limit:              15000
+
+! Enable auto select mode
+rofi.auto-select:                    false
+
+! Parse hosts file for ssh mode
+rofi.parse-hosts:                    false
+
+! Parse known_hosts file for ssh mode
+rofi.parse-known-hosts:              true
+
+! Do a more fuzzy matching
+rofi.fuzzy:                          true
+
+! Use glob matching
+rofi.glob:                           false
+
+! Use regex matching
+rofi.regex:                          true
+
+! Tokenize input string
+rofi.tokenize:                       true
+
+! Monitor id to show on
+rofi.m:                              -1
+
+! Pre-set filter
+rofi.filter:
+
+! Threads to use for string matching
+rofi.threads:                        1
+
+! Scrollbar width
+rofi.scrollbar-width:                8
+
+! Pidfile location
+rofi.pid:                            /run/user/1000/rofi.pid
+
+! Keybindings
+! =============================================================================
+rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
+rofi.kb-secondary-paste:             Control+v,Insert
+rofi.kb-clear-line:                  Control+u
+rofi.kb-move-front:                  Control+a
+rofi.kb-move-end:                    Control+e
+rofi.kb-move-word-back:              Alt+b
+rofi.kb-move-word-forward:           Alt+f
+rofi.kb-move-char-back:              Left,Control+b
+rofi.kb-move-char-forward:           Right,Control+f
+rofi.kb-remove-word-back:            Control+Alt+h
+rofi.kb-remove-word-forward:         Control+Alt+d
+rofi.kb-remove-char-forward:         Delete,Control+d
+rofi.kb-remove-char-back:            BackSpace,Control+h
+rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
+rofi.kb-accept-custom:               Control+Return
+rofi.kb-accept-entry-continue:       Shift+Return
+rofi.kb-mode-next:                   Shift+Right,Control+Tab
+rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
+rofi.kb-toggle-case-sensitivity:     grave,dead_grave
+rofi.kb-delete-entry:                Shift+Delete
+rofi.kb-row-left:                    Control+Page_Up
+rofi.kb-row-right:                   Control+Page_Down
+rofi.kb-row-up:                      Up,Control+p,Shift+Tab
+rofi.kb-row-down:                    Down,Control+n
+rofi.kb-row-tab:                     Tab
+rofi.kb-page-prev:                   Page_Up
+rofi.kb-page-next:                   Page_Down
+rofi.kb-row-first:                   Home,KP_Home
+rofi.kb-row-last:                    End,KP_End
+rofi.kb-row-select:                  Control+space
+rofi.kb-cancel:                      Escape,Control+bracketleft
+rofi.kb-custom-1:                    Alt+1
+rofi.kb-custom-2:                    Alt+2
+rofi.kb-custom-3:                    Alt+3
+rofi.kb-custom-4:                    Alt+4
+rofi.kb-custom-5:                    Alt+5
+rofi.kb-custom-6:                    Alt+6
+rofi.kb-custom-7:                    Alt+7
+rofi.kb-custom-8:                    Alt+8
+rofi.kb-custom-9:                    Alt+9
+rofi.kb-custom-10:                   Alt+0
+rofi.kb-custom-11:                   Alt+Shift+1
+rofi.kb-custom-12:                   Alt+Shift+2
+rofi.kb-custom-13:                   Alt+Shift+3
+rofi.kb-custom-14:                   Alt+Shift+4
+rofi.kb-custom-15:                   Alt+Shift+5
+rofi.kb-custom-16:                   Alt+Shift+6
+rofi.kb-custom-18:                   Alt+Shift+8
+rofi.kb-custom-17:                   Alt+Shift+7
+rofi.kb-custom-19:                   Alt+Shift+9
+rofi.kb-screenshot:                  Alt+Shift+S
+rofi.kb-toggle-sort:                 Alt+grave
